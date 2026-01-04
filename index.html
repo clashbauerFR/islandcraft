@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>WEBSITE IN ENTWICKLUNG NOCH! - IslandCraft - Premium Minecraft SMP Server</title>
+    <meta name="description" content="Tritt dem besten Minecraft SMP Server bei! IslandCraft bietet ein einzigartiges Survival-Erlebnis mit einer freundlichen Community."/>
+    <meta name="keywords" content="Minecraft, SMP, Server, Survival, Community, IslandCraft"/>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css"/>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="island_logo.png"/>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <img src="island_logo.png" alt="IslandCraft" class="loading-logo">
+            <div class="loading-text">IslandCraft</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-subtitle">Lade das beste SMP-Erlebnis...</div>
+        </div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-brand">
+                <img src="island_logo.png" alt="IslandCraft" class="nav-logo">
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#join" class="nav-link">
+                    <i class="fas fa-play"></i> Beitreten
+                </a>
+                <a href="#custom-plugins" class="nav-link">
+                    <i class="fas fa-puzzle-piece"></i> Custom Plugins
+                </a>
+                <a href="#faq" class="nav-link">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a class="btn btn-discord" href="https://discord.gg/uJAK2kVCVA" target="_blank" rel="noopener">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+                <a class="btn btn-primary" href="https://discord.gg/uJAK2kVCVA" target="_blank" rel="noopener">
+                    <i class="fas fa-user-plus"></i> Bewerben
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-status left">
+                <div class="status-card animate-slide-left">
+                    <div class="status-icon">🎮</div>
+                    <div class="status-info">
+                        <div class="status-label">Minecraft Server</div>
+                        <div class="status-count" id="mcCount">Nicht verbunden</div>
+                        <div class="status-address">islandcraft.cluehosting.de</div>
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <!-- Online Players Display -->
+                    <div class="online-players" id="onlinePlayers">
+                        <div class="players-header">
+                            <span class="players-title">Online Spieler</span>
+                            <span class="players-count" id="playersCount">0</span>
+                        </div>
+                        <div class="players-list" id="playersList">
+                            <div class="no-players">Keine Spieler online</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-center animate-fade-up">
+                <img src="island_logo.png" class="hero-logo animate-float" alt="IslandCraft"/>
+                <h1 class="hero-title">
+                    <span class="title-gradient">Island</span><span class="title-accent">Craft</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Erlebe das ultimative Minecraft SMP-Abenteuer mit einer einzigartigen Community, 
+                    spannenden Events und endlosen Möglichkeiten zum Bauen und Erkunden.
+                </p>
+                <div class="hero-features">
+                    <span class="feature-tag">⚔️ Survival</span>
+                    <span class="feature-tag">👥 Community</span>
+                    <span class="feature-tag development">💎 WEBSITE - IN ENTWICKLUNG!</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#join" class="btn btn-primary btn-large">
+                        <i class="fas fa-play"></i> Jetzt spielen
+                    </a>
+                    <a href="https://discord.gg/uJAK2kVCVA" class="btn btn-outline btn-large" target="_blank">
+                        <i class="fab fa-discord"></i> Discord beitreten
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-status right">
+                <div class="status-card animate-slide-right">
+                    <div class="status-icon">💬</div>
+                    <div class="status-info">
+                        <div class="status-label">Discord Server</div>
+                        <div class="status-count">
+                            <a href="https://discord.gg/uJAK2kVCVA" target="_blank" class="discord-join-btn">
+                                <i class="fab fa-discord"></i> Jetzt beitreten
+                            </a>
+                        </div>
+                        <div class="status-address">discord.gg/uJAK2kVCVA</div>
+                        <div class="status-indicator online"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll für mehr</span>
+                <div class="scroll-arrow">⬇️</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Join Section -->
+        <section class="section" id="join">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">So kannst du beitreten</h2>
+                    <p class="section-subtitle">Folge diesen einfachen Schritten und starte dein Abenteuer</p>
+                </div>
+                <div class="join-content">
+                    <div class="join-steps">
+                        <div class="step-item animate-fade-up">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Minecraft Java starten</h4>
+                                <p>Öffne Minecraft Java Edition (Version 1.21 - 1.21.10)</p>
+                                <div class="step-note">💡 Stelle sicher, dass du die richtige Version hast</div>
+                            </div>
+                        </div>
+                        <div class="step-item animate-fade-up-delay">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Server hinzufügen</h4>
+                                <p>Gehe zu Multiplayer → Server hinzufügen</p>
+                                <div class="server-input">
+                                    <input type="text" value="islandcraft.cluehosting.de" class="server-ip-input" readonly>
+                                    <button class="copy-btn" onclick="copyServerIP()">
+                                        <i class="fas fa-copy"></i> Kopieren
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item animate-fade-up-delay-2">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Verbinden & Spielen</h4>
+                                <p>Klicke auf "Fertig" und dann "Dem Server beitreten"</p>
+                                <div class="step-note">🎮 Bereit für dein Abenteuer!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="join-preview">
+                        <div class="minecraft-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <div class="control close"></div>
+                                    <div class="control minimize"></div>
+                                    <div class="control maximize"></div>
+                                </div>
+                                <div class="window-title">Minecraft 1.21.10 - Multiplayer</div>
+                            </div>
+                            <div class="window-content">
+                                <div class="server-list">
+                                    <div class="server-entry active">
+                                        <div class="server-icon">🏝️</div>
+                                        <div class="server-info">
+                                            <div class="server-name">IslandCraft SMP</div>
+                                            <div class="server-address">islandcraft.cluehosting.de</div>
+                                            <div class="server-status online" id="serverPlayerCount">Online - Nicht verbunden</div>
+                                        </div>
+                                        <div class="ping-bars">
+                                            <div class="bar active"></div>
+                                            <div class="bar active"></div>
+                                            <div class="bar active"></div>
+                                            <div class="bar active"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Plugins Section -->
+        <section class="section section-dark" id="custom-plugins">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Welche Custom Plugins nutzt IslandCraft?</h2>
+                    <p class="section-subtitle">Einzigartige Plugins entwickelt speziell für IslandCraft</p>
+                </div>
+                <div class="plugins-grid">
+                    <div class="plugin-card featured">
+                        <div class="plugin-header">
+                            <div class="plugin-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div class="plugin-badge">Aktiv</div>
+                        </div>
+                        <div class="plugin-content">
+                            <h3 class="plugin-title">Islandbans</h3>
+                            <p class="plugin-description">
+                                Professionelles Moderations- und Ban-System mit umfassenden Bestrafungsfunktionen, 
+                                Discord-Integration und benutzerfreundlicher GUI.
+                            </p>
+                            <div class="plugin-features">
+                                <span class="feature-tag">🔨 Ban System</span>
+                                <span class="feature-tag">🔇 Mute System</span>
+                                <span class="feature-tag">⚠️ Warn System</span>
+                                <span class="feature-tag">💬 Discord Integration</span>
+                                <span class="feature-tag">📊 GUI Interface</span>
+                            </div>
+                            <div class="plugin-authors">
+                                <span class="author-label">Autoren:</span>
+                                <span class="author-name">clashbauer</span>
+                                <span class="author-separator">&</span>
+                                <span class="author-name">zCraftcore14</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plugin-card">
+                        <div class="plugin-header">
+                            <div class="plugin-icon">
+                                <i class="fas fa-redo"></i>
+                            </div>
+                            <div class="plugin-badge">Aktiv</div>
+                        </div>
+                        <div class="plugin-content">
+                            <h3 class="plugin-title">IslandReset</h3>
+                            <p class="plugin-description">
+                                Spieler-Reset System das alle Spielerdaten zurücksetzt - Inventar, 
+                                Erfahrung, Fortschritte und mehr mit einer schönen Progress-Anzeige.
+                            </p>
+                            <div class="plugin-features">
+                                <span class="feature-tag">🔄 Player Reset</span>
+                                <span class="feature-tag">📊 Progress Bar</span>
+                                <span class="feature-tag">⚙️ Configurable</span>
+                                <span class="feature-tag">🎮 Action Bar</span>
+                            </div>
+                            <div class="plugin-authors">
+                                <span class="author-label">Autor:</span>
+                                <span class="author-name">clashbauer</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="plugin-card">
+                        <div class="plugin-header">
+                            <div class="plugin-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <div class="plugin-badge">Aktiv</div>
+                        </div>
+                        <div class="plugin-content">
+                            <h3 class="plugin-title">Anti-VPN</h3>
+                            <p class="plugin-description">
+                                Erweiterte Sicherheitslösung zum Schutz vor VPN-Verbindungen. 
+                                Verhindert Umgehung von Bans und schützt die Server-Integrität.
+                            </p>
+                            <div class="plugin-features">
+                                <span class="feature-tag">🛡️ VPN Detection</span>
+                                <span class="feature-tag">🚫 Proxy Block</span>
+                                <span class="feature-tag">🔍 IP Analysis</span>
+                                <span class="feature-tag">⚡ Real-time</span>
+                            </div>
+                            <div class="plugin-authors">
+                                <span class="author-label">Autor:</span>
+                                <span class="author-name">clashbauer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plugin-card featured">
+                        <div class="plugin-header">
+                            <div class="plugin-icon">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <div class="plugin-badge">Aktiv</div>
+                        </div>
+                        <div class="plugin-content">
+                            <h3 class="plugin-title">Skripts</h3>
+                            <p class="plugin-description">
+                                Umfangreiche Sammlung von 22 benutzerdefinierten Skripten für erweiterte 
+                                Server-Funktionalitäten. Durchschnittlich 100 Codezeilen pro Skript.
+                            </p>
+                            <div class="plugin-features">
+                                <span class="feature-tag">📜 22 Scripts</span>
+                                <span class="feature-tag">💻 ~100 Lines/Script</span>
+                                <span class="feature-tag">⚙️ Custom Functions</span>
+                                <span class="feature-tag">🔧 Server Utils</span>
+                            </div>
+                            <div class="plugin-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">22</span>
+                                    <span class="stat-label">Scripts</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">~100</span>
+                                    <span class="stat-label">Lines/Script</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">2200+</span>
+                                    <span class="stat-label">Total Lines</span>
+                                </div>
+                            </div>
+                            <div class="plugin-authors">
+                                <span class="author-label">Autor:</span>
+                                <span class="author-name">clashbauer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plugins-info">
+                    <div class="info-card">
+                        <i class="fas fa-code"></i>
+                        <h4>Entwickelt von unserem Team</h4>
+                        <p>Alle Custom Plugins werden speziell für IslandCraft entwickelt und sind perfekt auf unsere Community abgestimmt. Regelmäßige Updates und neue Features sorgen für ein einzigartiges Spielerlebnis.</p>
+                        <div class="development-notice-small">
+                            <i class="fas fa-hammer"></i>
+                            <span>Weitere Plugins in Entwicklung!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Epic Adventures Section -->
+        <!-- FAQ Section -->
+        <section class="section section-dark" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Häufige Fragen</h2>
+                    <p class="section-subtitle">Antworten auf die wichtigsten Fragen rund um IslandCraft SMP</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-category">
+                        <h3><i class="fas fa-server"></i> Server & Technik</h3>
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Wie kann ich dem Server beitreten?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Öffne Minecraft Java Edition (Version 1.21 - 1.21.10), gehe zu Multiplayer → Server hinzufügen und gib die IP <strong>islandcraft.cluehosting.de</strong> ein. Klicke auf "Fertig" und dann "Dem Server beitreten".</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Welche Minecraft-Versionen werden unterstützt?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Wir unterstützen Minecraft Java Edition Version 1.21 bis 1.21.10. Stelle sicher, dass du eine kompatible Version verwendest, um Verbindungsprobleme zu vermeiden.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Ist der Server 24/7 online?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Ja, unser Server läuft rund um die Uhr. Bei geplanten Wartungsarbeiten informieren wir rechtzeitig über Discord. Sollte der Server einmal nicht erreichbar sein, prüfe unseren Discord für Updates.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Kann ich mit Freunden zusammen spielen?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Absolut! IslandCraft ist ein Multiplayer-Server, der darauf ausgelegt ist, mit Freunden gespielt zu werden. Ihr könnt zusammen bauen, erkunden und an Events teilnehmen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3><i class="fas fa-gamepad"></i> Gameplay & Features</h3>
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Ist PvP erlaubt?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>PvP ist in bestimmten Bereichen erlaubt, aber Spawn-Killing und unfaires Verhalten sind verboten. Respektiere andere Spieler und halte dich an unsere Regeln für ein faires Spielerlebnis.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Gibt es ein Economy-System?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Ja! Wir haben ein vollständiges Economy-System mit Shops, Handel zwischen Spielern und verschiedenen Möglichkeiten, Geld zu verdienen. Erkunde den Server, um mehr zu erfahren!</p>
+                                    <div class="development-notice-inline">
+                                        <i class="fas fa-coins"></i>
+                                        <span>Economy-System IN ENTWICKLUNG NOCH!</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3><i class="fas fa-users"></i> Community & Support</h3>
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Wie kann ich mich für das Team bewerben?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Bewerbungen laufen über unseren Discord-Server. Tritt dem Discord bei, schaue dir die verfügbaren Positionen an und folge den Anweisungen im Bewerbungsbereich. Wir suchen immer motivierte Teammitglieder!</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Wo finde ich Hilfe bei Problemen?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Unser Discord-Server ist die beste Anlaufstelle für Support. Dort findest du Hilfe von unserem Team und der Community. Du kannst auch im Spiel nach Online-Teammitgliedern fragen.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Gibt es regelmäßige Events?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Ja! Wir veranstalten regelmäßig Events wie Build-Contests, PvP-Turniere und Community-Events. Alle Termine werden im Discord und auf der Website angekündigt. Verpasse keine Events!</p>
+                                    <div class="development-notice-inline">
+                                        <i class="fas fa-hammer"></i>
+                                        <span>Event-System IN ENTWICKLUNG NOCH!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Kann ich Vorschläge für den Server machen?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Auf jeden Fall! Wir freuen uns über Feedback und Vorschläge von unserer Community. Teile deine Ideen im Discord oder sprich mit einem Teammitglied im Spiel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3><i class="fas fa-shield-alt"></i> Regeln & Sicherheit</h3>
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Was passiert bei Regelverstößen?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Je nach Schwere des Verstoßes können Verwarnungen, Kicks, Mutes oder Bans verhängt werden. Wiederholte oder schwere Verstöße führen zu einem permanenten Bann. Lies unsere Regeln sorgfältig durch!</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Sind Mods/Hacks erlaubt?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Cheating, Hacking und unfaire Mods sind strengstens verboten. Erlaubt sind nur kosmetische Mods wie Optifine oder Shader. Bei Unsicherheit frage vorher im Discord nach.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Wie melde ich Regelbrecher?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Melde Regelbrecher sofort einem Online-Teammitglied im Spiel oder erstelle einen Report im Discord. Screenshots oder Videos als Beweis sind hilfreich. Wir nehmen alle Meldungen ernst!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-contact">
+                    <div class="contact-card">
+                        <div class="contact-icon">💬</div>
+                        <h3>Weitere Fragen?</h3>
+                        <p>Hast du eine Frage, die hier nicht beantwortet wurde? Unser Team hilft dir gerne weiter!</p>
+                        <a href="https://discord.gg/uJAK2kVCVA" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-discord"></i> Discord Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="island_logo.png" alt="IslandCraft" class="footer-logo">
+                        <h3>IslandCraft</h3>
+                        <p>Das ultimative Minecraft SMP-Erlebnis für alle Spieler.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://discord.gg/uJAK2kVCVA" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@islandcraft89" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Server</h4>
+                    <ul class="footer-links">
+                        <li><a href="#join">Beitreten</a></li>
+                        <li><a href="#custom-plugins">Custom Plugins</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://discord.gg/uJAK2kVCVA" target="_blank">Discord</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="openModal('impressumModal')">Impressum</a></li>
+                        <li><a href="#" onclick="openModal('datenschutzModal')">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Server Info</h4>
+                    <div class="server-info">
+                        <div class="info-item">
+                            <span class="label">IP:</span>
+                            <span class="value">islandcraft.cluehosting.de</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Version:</span>
+                            <span class="value">1.21 - 1.21.10</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Status:</span>
+                            <span class="value online" id="footerStatus">Online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <span>© 2026 IslandCraft. Alle Rechte vorbehalten.</span>
+                    <span class="footer-note">Nicht mit Mojang Studios verbunden.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced Modals -->
+    <div class="modal" id="applyModal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Team Bewerbung</h3>
+                <button class="modal-close" data-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="apply-info">
+                    <h4>Werde Teil unseres Teams!</h4>
+                    <p>Du möchtest IslandCraft mitgestalten? Wir suchen motivierte Teammitglieder!</p>
+                    <div class="apply-positions">
+                        <div class="position">
+                            <h5><i class="fas fa-shield"></i> Admin</h5>
+                            <p>Verwalte den Server und unterstütze die Community.</p>
+                        </div>
+                        <div class="position">
+                            <h5><i class="fas fa-shield-alt"></i> Moderator</h5>
+                            <p>Sorge für Ordnung und hilf anderen Spielern.</p>
+                        </div>
+                        <div class="position">
+                            <h5><i class="fas fa-code"></i> Developer</h5>
+                            <p>Entwickle Plugins und Features für den Server.</p>
+                        </div>
+                        <div class="position">
+                            <h5><i class="fas fa-hammer"></i> Builder</h5>
+                            <p>Erstelle beeindruckende Bauwerke für den Server.</p>
+                        </div>
+                        <div class="position">
+                            <h5><i class="fas fa-heart"></i> Supporter</h5>
+                            <p>Hilf neuen Spielern und unterstütze die Community.</p>
+                        </div>
+                    </div>
+                    <div class="apply-requirements">
+                        <h5>Voraussetzungen:</h5>
+                        <ul>
+                            <li>Mindestens 16 Jahre alt</li>
+                            <li>Aktiv auf dem Server</li>
+                            <li>Freundlich und hilfsbereit</li>
+                            <li>Discord verfügbar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-close>Schließen</button>
+                <a href="https://discord.gg/uJAK2kVCVA" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-discord"></i> Bewerbung im Discord
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impressum Modal -->
+    <div class="modal" id="impressumModal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-info-circle"></i> Impressum</h3>
+                <button class="modal-close" data-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="impressum-content">
+                    <h4>Angaben gemäß § 5 TMG</h4>
+                    <div class="contact-info">
+                        <p><strong>Verantwortlich für den Inhalt:</strong></p>
+                        <p>
+                            Mustafacan Yilmaz<br>
+                            Ernst-Wiechert-Straße 9<br>
+                            65479 Raunheim<br>
+                            Deutschland
+                        </p>
+                        
+                        <p><strong>Kontakt:</strong></p>
+                        <p>
+                            E-Mail: <a href="mailto:islandcraft54@gmail.com">islandcraft54@gmail.com</a>
+                        </p>
+                    </div>
+                    
+                    <h4>Haftungsausschluss</h4>
+                    <div class="disclaimer">
+                        <h5>Haftung für Inhalte</h5>
+                        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                        
+                        <h5>Haftung für Links</h5>
+                        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+                        
+                        <h5>Urheberrecht</h5>
+                        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+                    </div>
+                    
+                    <div class="minecraft-notice">
+                        <p><strong>Hinweis:</strong> IslandCraft ist ein privater Minecraft-Server und steht in keiner Verbindung zu Mojang Studios oder Microsoft.</p>
+                    </div>
+                    
+                    <h4>Technische Systeme</h4>
+                    <div class="technical-info">
+                        <h5>Moderationssysteme</h5>
+                        <p>Unser Server verwendet folgende automatisierte Systeme:</p>
+                        <ul>
+                            <li><strong>IslandBans:</strong> Automatisches Ban- und Moderationssystem</li>
+                            <li><strong>Anti-Cheat System:</strong> Schutz vor unfairem Spielverhalten</li>
+                            <li><strong>Anti-VPN System:</strong> Schutz vor VPN-Umgehungen</li>
+                        </ul>
+                        
+                        <h5>Website-Hosting</h5>
+                        <p>Diese Website wird über GitHub Pages gehostet und ist als Open-Source-Projekt verfügbar.</p>
+                        <p>Repository: <a href="https://github.com/islandcraft/website" target="_blank">github.com/islandcraft/website</a></p>
+                        
+                        <h5>Drittanbieter-Services</h5>
+                        <ul>
+                            <li><strong>GitHub Inc.:</strong> Website-Hosting über GitHub Pages</li>
+                            <li><strong>Discord Inc.:</strong> Community-Management und Support</li>
+                            <li><strong>ClueHosting:</strong> Minecraft-Server Hosting</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Nutzungsbedingungen</h4>
+                    <div class="terms-info">
+                        <h5>Server-Nutzung</h5>
+                        <p>Die Nutzung unseres Minecraft-Servers unterliegt folgenden Bedingungen:</p>
+                        <ul>
+                            <li>Einhaltung der Serverregeln</li>
+                            <li>Respektvoller Umgang mit anderen Spielern</li>
+                            <li>Keine Verwendung von Cheats oder unfairen Mods</li>
+                            <li>Akzeptanz automatisierter Moderationsmaßnahmen</li>
+                        </ul>
+                        
+                        <h5>Haftungsausschluss für Moderationsmaßnahmen</h5>
+                        <p>Moderationsmaßnahmen (Bans, Mutes, Warns) werden sowohl automatisch als auch manuell durchgeführt. Wir behalten uns das Recht vor, Spieler bei Regelverstößen vom Server auszuschließen. Bei Fehlentscheidungen können Spieler Widerspruch einlegen.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-close>Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div class="modal" id="datenschutzModal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-shield-alt"></i> Datenschutzerklärung</h3>
+                <button class="modal-close" data-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="datenschutz-content">
+                    <h4>1. Datenschutz auf einen Blick</h4>
+                    <div class="privacy-section">
+                        <h5>Allgemeine Hinweise</h5>
+                        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen oder unseren Minecraft-Server nutzen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                        
+                        <h5>Datenerfassung auf unserer Website</h5>
+                        <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+                        <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                        
+                        <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
+                        <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben oder bei der Registrierung auf unserem Discord-Server.</p>
+                    </div>
+                    
+                    <h4>2. Minecraft-Server Datenverarbeitung</h4>
+                    <div class="privacy-section">
+                        <h5>Welche Daten werden beim Spielen gespeichert?</h5>
+                        <ul>
+                            <li>Minecraft-Benutzername und UUID</li>
+                            <li>IP-Adresse (für Sicherheitszwecke und Moderation)</li>
+                            <li>Spielaktivitäten und Chat-Nachrichten</li>
+                            <li>Spielfortschritt und Inventar</li>
+                            <li>Verbindungszeiten und -dauer</li>
+                            <li>Moderationsaktionen (Bans, Mutes, Warns)</li>
+                            <li>Anti-Cheat Logs und Verdachtsmeldungen</li>
+                        </ul>
+                        
+                        <h5>Zweck der Datenverarbeitung</h5>
+                        <p>Die Daten werden ausschließlich für folgende Zwecke verwendet:</p>
+                        <ul>
+                            <li>Bereitstellung des Minecraft-Servers</li>
+                            <li>Moderation und Durchsetzung der Serverregeln</li>
+                            <li>Schutz vor Griefing und anderen Regelverstößen</li>
+                            <li>Technische Wartung und Verbesserung des Servers</li>
+                            <li>Automatische Moderation durch Ban-System</li>
+                            <li>Cheat-Erkennung und Präventionsmaßnahmen</li>
+                        </ul>
+                        
+                        <h5>Moderationssysteme</h5>
+                        <p><strong>Ban-System (IslandBans):</strong></p>
+                        <p>Unser Server verwendet ein automatisiertes Ban-System, das folgende Daten verarbeitet:</p>
+                        <ul>
+                            <li>Spielerverhalten und Regelverstoß-Historie</li>
+                            <li>Bestrafungsarten (Bans, Mutes, Warns) mit Zeitstempel</li>
+                            <li>Grund der Bestrafung und ausführendes Teammitglied</li>
+                            <li>Dauer und Status von Bestrafungen</li>
+                        </ul>
+                        
+                        <p><strong>Anti-Cheat System:</strong></p>
+                        <p>Zur Gewährleistung eines fairen Spielerlebnisses setzen wir Anti-Cheat-Systeme ein, die:</p>
+                        <ul>
+                            <li>Spielerbewegungen und -aktionen analysieren</li>
+                            <li>Verdächtige Aktivitäten protokollieren</li>
+                            <li>Automatische Schutzmaßnahmen aktivieren</li>
+                            <li>Logs für manuelle Überprüfung durch Moderatoren erstellen</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>3. Discord Integration</h4>
+                    <div class="privacy-section">
+                        <p>Unser Server ist mit Discord verknüpft. Bei der Nutzung unseres Discord-Servers gelten zusätzlich die Datenschutzbestimmungen von Discord Inc.</p>
+                        <p>Weitere Informationen finden Sie in der Discord-Datenschutzerklärung: <a href="https://discord.com/privacy" target="_blank">https://discord.com/privacy</a></p>
+                    </div>
+                    
+                    <h4>4. Website und Technische Dienste</h4>
+                    <div class="privacy-section">
+                        <h5>GitHub Pages Hosting</h5>
+                        <p>Diese Website wird über GitHub Pages gehostet. GitHub Inc. kann dabei folgende Daten verarbeiten:</p>
+                        <ul>
+                            <li>IP-Adresse des Besuchers</li>
+                            <li>Browser-Informationen und User-Agent</li>
+                            <li>Zugriffszeitpunkt und besuchte Seiten</li>
+                            <li>Referrer-URL (von welcher Seite Sie kamen)</li>
+                        </ul>
+                        <p>Weitere Informationen finden Sie in der GitHub-Datenschutzerklärung: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">https://docs.github.com/privacy</a></p>
+                        
+                        <h5>Cookies und lokale Speicherung</h5>
+                        <p>Diese Website verwendet Cookies zur Verbesserung der Benutzererfahrung. Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden. Sie können die Verwendung von Cookies in Ihren Browsereinstellungen deaktivieren.</p>
+                    </div>
+                    
+                    <h4>5. Datenspeicherung und -sicherheit</h4>
+                    <div class="privacy-section">
+                        <h5>Speicherdauer</h5>
+                        <p>Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist:</p>
+                        <ul>
+                            <li>Spielerdaten: Solange das Spielerkonto aktiv ist</li>
+                            <li>Moderationslogs: Bis zu 2 Jahre für Nachvollziehbarkeit</li>
+                            <li>Anti-Cheat Logs: 6 Monate nach letzter Aktivität</li>
+                            <li>Chat-Nachrichten: 30 Tage für Moderationszwecke</li>
+                        </ul>
+                        
+                        <h5>Datensicherheit</h5>
+                        <p>Wir verwenden geeignete technische und organisatorische Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen.</p>
+                    </div>
+                    
+                    <h4>6. Ihre Rechte</h4>
+                    <div class="privacy-section">
+                        <p>Sie haben jederzeit das Recht:</p>
+                        <ul>
+                            <li>Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten</li>
+                            <li>Berichtigung unrichtiger Daten zu verlangen</li>
+                            <li>Löschung Ihrer Daten zu beantragen</li>
+                            <li>Einschränkung der Datenverarbeitung zu verlangen</li>
+                            <li>Widerspruch gegen die Verarbeitung einzulegen</li>
+                            <li>Einsicht in Moderationslogs und Ban-Historie zu erhalten</li>
+                        </ul>
+                        <p>Wenden Sie sich hierzu an: <a href="mailto:islandcraft54@gmail.com">islandcraft54@gmail.com</a></p>
+                        
+                        <h5>Widerspruch gegen Moderationsmaßnahmen</h5>
+                        <p>Bei Bans oder anderen Moderationsmaßnahmen können Sie Widerspruch einlegen. Kontaktieren Sie uns über Discord oder E-Mail mit einer detaillierten Begründung.</p>
+                    </div>
+                    
+                    <h4>7. Automatisierte Entscheidungsfindung</h4>
+                    <div class="privacy-section">
+                        <p>Unser Server verwendet automatisierte Systeme für:</p>
+                        <ul>
+                            <li><strong>Anti-Cheat Erkennung:</strong> Automatische Erkennung und Bestrafung von Cheating-Verhalten</li>
+                            <li><strong>Spam-Schutz:</strong> Automatische Filterung von Spam-Nachrichten</li>
+                            <li><strong>Grief-Schutz:</strong> Automatische Rückgängigmachung von Vandalismus</li>
+                        </ul>
+                        <p>Sie haben das Recht, nicht einer ausschließlich auf automatisierter Verarbeitung beruhenden Entscheidung unterworfen zu werden. Bei automatischen Bans können Sie eine manuelle Überprüfung beantragen.</p>
+                    </div>
+                    
+                    <h4>8. Datensicherheit</h4>
+                    <div class="privacy-section">
+                        <p>Wir verwenden geeignete technische und organisatorische Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen.</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <p><strong>Kontakt bei Datenschutzfragen:</strong></p>
+                        <p>E-Mail: <a href="mailto:islandcraft54@gmail.com">islandcraft54@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-close>Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>🍪 Cookies</h4>
+                <p>Wir verwenden Cookies, um deine Erfahrung zu verbessern. Durch die Nutzung unserer Website stimmst du der Verwendung von Cookies zu.</p>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn btn-secondary btn-small" onclick="declineCookies()">Ablehnen</button>
+                <button class="btn btn-primary btn-small" onclick="acceptCookies()">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
